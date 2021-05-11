@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css'
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Open Sans", sans-serif; }
+
+form {
+	padding: 30pt;
+	background: #fbfbfb;
+	border: 1px solid #d6d4d4;
+}
+
+.form-title {
+	font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #555454;
+    font-size: 18px;
+    padding: 0 0 15px;
+    line-height: normal;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #d6d4d4;
+}
+
+label {
+	color: #333333;
+	font-weight: bold;
+	font-size: 10pt;
+}
+
