@@ -27,13 +27,13 @@ for user in users:
         driver.find_element_by_name("password").send_keys(user['password'])
 
         select = Select(driver.find_element_by_name("day"))
-        select.select_by_value(user['day'])
+        select.select_by_visible_text(user['day'])
 
         select = Select(driver.find_element_by_name("month"))
         select.select_by_value(str(int(user['month']) - 1))
 
         select = Select(driver.find_element_by_name("year"))
-        select.select_by_value(user['year'])
+        select.select_by_visible_text(user['year'])
 
         driver.find_element_by_name("address1").send_keys(user['address1'])
 
@@ -45,6 +45,9 @@ for user in users:
         select.select_by_visible_text(user['state'].title())
 
         driver.find_element_by_name("zip").send_keys(str(user['postal_code']))
+
+        select = Select(driver.find_element_by_name("country"))
+        select.select_by_visible_text("United States");
 
 
         submit_button = driver.find_element_by_xpath('/html/body/app-root/div/form/div[13]/button')

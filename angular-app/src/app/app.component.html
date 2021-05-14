@@ -6,7 +6,7 @@
 
 <div style="margin-top:20pt" class="container">
 
-<form class="row">
+<form class="row" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
 
 	<h3 class="form-title">YOUR PERSONAL INFORMATION</h3>
 
@@ -15,11 +15,11 @@
 	<label style="margin-bottom:0">Title</label>
 	<br>
 	<div class="form-check form-check-inline">
-		<input class="form-check-input" type="radio" name="genderOptions" id="id_gender_1" value="1">
+		<input class="form-check-input" type="radio" name="genderOptions" id="id_gender_1" value="1" ngModel>
 		<label class="form-check-label" for="id_gender_1">Mrs</label>
 	</div>
 	<div class="form-check form-check-inline">
-		<input class="form-check-input" type="radio" name="genderOptions" id="id_gender_2" value="2">
+		<input class="form-check-input" type="radio" name="genderOptions" id="id_gender_2" value="2" ngModel>
 		<label class="form-check-label" for="id_gender_2">Mr</label>
 	</div>
 	</div>
@@ -27,22 +27,22 @@
 	<!-- user infos -->
 	<label for="first-name" class="form-label">First Name *</label>
 	<div class="input-group input-group-sm mb-3">
-		<input name="first-name" type="text" class="form-control">
+		<input name="first-name" type="text" class="form-control" ngModel>
 	</div>
 
 	<label for="last-name" class="form-label">Last Name *</label>
 	<div class="input-group input-group-sm mb-3">
-		<input name="last-name" type="text" class="form-control">
+		<input name="last-name" type="text" class="form-control" ngModel>
 	</div>
 
 	<label for="email" class="form-label">Email *</label>
 	<div class="input-group input-group-sm mb-3">
-		<input name="email" type="text" class="form-control">
+		<input name="email" type="text" class="form-control" ngModel>
 	</div>
 
 	<label for="password" class="form-label">Password *</label>
 	<div class="input-group input-group-sm mb-3">
-		<input name="password" type="password" class="form-control">
+		<input name="password" type="password" class="form-control" ngModel>
 	</div>
 
 	<!-- select birth date -->
@@ -51,21 +51,18 @@
 	<div class="row">
 
 	<div class="col-6 col-sm-2">
-		<select class="form-select form-select-sm" name="day">
-			<option selected>-</option>
-			<option *ngFor="let day of daysBirthList" [value]=day>{{ day }}</option>
+		<select class="form-select form-select-sm" name="day" ngModel>
+			<option *ngFor="let day of daysBirthList">{{ day }}</option>
 		</select>
 	</div>
 	<div class="col-6 col-sm-2">
-		<select class="form-select form-select-sm" name="month"> 
-			<option selected>-</option>
-			<option *ngFor="let month of monthsBirthList; index as i" [value]=i>{{ month }}</option>
+		<select class="form-select form-select-sm" name="month" ngModel> 
+			<option *ngFor="let month of monthsBirthList; index as i" [value]="i">{{ month }}</option>
 		</select>
 	</div>
 	<div class="col-6 col-sm-2">
-		<select class="form-select form-select-sm" name="year">
-			<option selected>-</option>
-			<option *ngFor="let year of yearsBirthList" [value]="year">{{ year }}</option>
+		<select class="form-select form-select-sm" name="year" ngModel>
+			<option *ngFor="let year of yearsBirthList">{{ year }}</option>
 		</select>
 	</div>
 
@@ -77,42 +74,40 @@
 	<!-- user address -->
 	<label for="address1" class="form-label">Address *</label>
 	<div class="input-group input-group-sm mb-3">
-		<input name="address1" type="text" class="form-control">
+		<input name="address1" type="text" class="form-control" ngModel>
 	</div>
 
 	<!-- user address -->
 	<label for="address2" class="form-label">Address (Line 2)</label>
 	<div class="input-group input-group-sm mb-3">
-		<input name="address2" type="text" class="form-control">
+		<input name="address2" type="text" class="form-control" ngModel>
 	</div>
 
 	<!-- user address -->
 	<label for="city" class="form-label">City *</label>
 	<div class="input-group input-group-sm mb-3">
-		<input name="city" type="text" class="form-control">
+		<input name="city" type="text" class="form-control" ngModel>
 	</div>
 
 	<!-- select state -->
 	<label>State *</label>
 	<div class="col-6 col-sm-5" style="margin-bottom:10pt">
-		<select class="form-select form-select-sm" name="state">
-			<option selected>-</option>
-			<option *ngFor="let state of statesList; index as i" [value]="i">{{ state | titlecase }}</option>
+		<select class="form-select form-select-sm" name="state" ngModel>
+			<option *ngFor="let state of statesList">{{ state | titlecase }}</option>
 		</select>
 	</div>
 
 	<!-- user address -->
 	<label for="zip" class="form-label">Zip/Postal Code *</label>
 	<div class="input-group input-group-sm mb-3">
-		<input name="zip" type="text" class="form-control">
+		<input name="zip" type="text" class="form-control" ngModel>
 	</div>
 
 	<!-- select country -->
 	<label>Country *</label>
 	<div class="col-6 col-sm-5" style="margin-bottom:10pt">
-		<select class="form-select form-select-sm" name="country">
-			<option >-</option>
-			<option selected>United States</option>
+		<select class="form-select form-select-sm" name="country" ngModel>
+			<option>United States</option>
 		</select>
 	</div>
 
