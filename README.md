@@ -12,3 +12,5 @@ The main objective of this project is to use the python selenium framework to au
 ### Project Preview
 
 ![register selenium script](images/preview.gif)
+![register list](images/register_list.png)
+![register form](images/register_form.png)

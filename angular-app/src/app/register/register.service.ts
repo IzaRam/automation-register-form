@@ -13,14 +13,11 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   apiUrl = "http://localhost:8080/api/v1/person/";
-
-  getPersons () {
-	return this.http.get(this.apiUrl + "all");
-  }
-
+	
   addPerson(person: Register) {
 	this.http.post(this.apiUrl + "add", person).subscribe(person => {
 		console.log(person);
 	});
   }
+
 }

@@ -1,7 +1,7 @@
-from selenium import webdriver
-from users_faker import generate_users
-from selenium.webdriver.support.ui import Select
 import sys
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+from users_faker import generate_users
 
 driver = webdriver.Chrome("/usr/bin/chromedriver")
 
@@ -12,7 +12,7 @@ users = generate_users(n)
 for user in users:
 
     try:
-        driver.get("http://localhost:4200")
+        driver.get("http://localhost:4200/register")
 
         gender = "id_gender_1" if user['gender'] == 'F' else "id_gender_2"
 
@@ -47,10 +47,10 @@ for user in users:
         driver.find_element_by_name("zip").send_keys(str(user['postal_code']))
 
         select = Select(driver.find_element_by_name("country"))
-        select.select_by_visible_text("United States");
+        select.select_by_visible_text("United States")
 
 
-        submit_button = driver.find_element_by_xpath('/html/body/app-root/div/form/div[13]/button')
+        submit_button = driver.find_element_by_xpath('/html/body/app-root/app-register/div/form/div[13]/button')
         driver.execute_script("arguments[0].click()", submit_button)
 
     except Exception as e:
