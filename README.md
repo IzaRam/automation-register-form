@@ -1,6 +1,5 @@
 # Project to Automate filling in registration form
 
-... in progress
 
 The main objective of this project is to use the python selenium framework to automatically fill out a registration form.
 
@@ -9,7 +8,7 @@ The main objective of this project is to use the python selenium framework to au
 * A Rest API has been implemented to communicate with a database in order to persist the registered data.
 
 
-### Project Preview
+## Project Overview
 
 ![register selenium script](images/preview.gif)
 ![register list](images/register_list.png)
